@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Moeda Origem -->
+
+    <!-- Moeda Destino -->
+
+    <!-- Valor para Converter -->
+
+    <!-- Botão de Converter -->
+
+    <!-- Barra de Progresso -->
+
+    <TextView
+        android:id="@+id/origemTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="34dp"
+        android:text="Moeda Origem"
+        app:layout_constraintBottom_toTopOf="@+id/origemSpinner"
+        app:layout_constraintStart_toStartOf="@+id/origemSpinner"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/origemSpinner"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/destinoTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/origemTextView" />
+
+    <TextView
+        android:id="@+id/destinoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="29dp"
+        android:text="Moeda Destino"
+        app:layout_constraintBottom_toTopOf="@+id/destinoSpinner"
+        app:layout_constraintStart_toStartOf="@+id/destinoSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/origemSpinner" />
+
+    <Spinner
+        android:id="@+id/destinoSpinner"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="106dp"
+        app:layout_constraintBottom_toTopOf="@+id/valorEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/destinoTextView" />
+
+    <EditText
+        android:id="@+id/valorEditText"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="92dp"
+        android:hint="Digite o valor"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/destinoSpinner" />
+
+    <Button
+        android:id="@+id/converterButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="19dp"
+        android:text="Converter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginBottom="72dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/converterButton"
+        app:layout_constraintStart_toStartOf="@+id/valorEditText"
+        app:layout_constraintTop_toBottomOf="@+id/valorEditText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
