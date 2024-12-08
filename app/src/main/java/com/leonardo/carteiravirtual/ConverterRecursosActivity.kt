@@ -124,21 +124,6 @@ class ConverterRecursosActivity : AppCompatActivity() {
         ).show()
     }
 
-    private suspend fun buscarCotacao(moedaOrigem: String, moedaDestino: String): Double? {
-        return try {
-            val pares = "$moedaOrigem-$moedaDestino"
-            val response = currencyApi.obterCotacao(pares)
-            response.let {
-                val property = it::class.members.firstOrNull{member -> member.name == pares}
-                val cotacao = property?.call(it) as Currency
-                cotacao.bid.toDouble()
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-            null
-        }
-    }
-
     private fun atualizarSaldos(moedaOrigem: String, moedaDestino: String, valorOrigem: Double, valorConvertido: Double) {
         val saldoOrigem = saldoManager.recuperarSaldo(moedaOrigem) - valorOrigem
         val saldoDestino = saldoManager.recuperarSaldo(moedaDestino) + valorConvertido

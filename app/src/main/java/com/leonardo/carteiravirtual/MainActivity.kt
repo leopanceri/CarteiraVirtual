@@ -12,25 +12,7 @@ class MainActivity : AppCompatActivity() {
     private var saldoReais = 0.0
     private lateinit var saldoManager: SaldoManager
     private lateinit var saldoTextView: TextView
-    /*
-    // Registradores para as Activities
-    private val depositarLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val novoSaldo = result.data?.getDoubleExtra("novoSaldo", saldo) ?: saldo
-            saldo = novoSaldo
-            updateSaldoTextView()
-        }
-    }
 
-    private val converterLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == RESULT_OK) {
-            val novoSaldo = result.data?.getDoubleExtra("novoSaldo", saldo) ?: saldo
-            saldo = novoSaldo
-            updateSaldoTextView()
-        }
-    }
-
-     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

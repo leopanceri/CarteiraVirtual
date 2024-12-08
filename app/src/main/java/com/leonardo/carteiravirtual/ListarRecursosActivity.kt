@@ -41,7 +41,9 @@ class ListarRecursosActivity : AppCompatActivity() {
         val recursos = mutableListOf<Recurso>()
         moedas.forEach { moeda ->
             val saldo = saldoManager.recuperarSaldo(moeda)
-            recursos.add(Recurso(moeda, saldo))
+            if(saldo != 0.0){
+                recursos.add(Recurso(moeda, saldo))
+            }
         }
         return recursos
     }
